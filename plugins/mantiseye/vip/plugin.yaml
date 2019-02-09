@@ -1,0 +1,6 @@
+plugin:
+    name: 'mantiseye.vip::lang.plugin.name'
+    description: 'This is an extension of Users plugin to enable client to add a status to a User, of whether or not they are a VIP expert. Adding this status marks them with a star on the frontend.'
+    author: 'Mantis Eye'
+    icon: oc-icon-star
+    homepage: 'https://mantiseye.co'

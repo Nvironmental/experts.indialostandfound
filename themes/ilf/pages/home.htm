@@ -1,0 +1,47 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[albumList]
+albumPage = "home"
+thumbMode = "auto"
+thumbWidth = 640
+thumbHeight = 480
+albumsOnPage = 12
+==
+<div class="container"> 
+           <div class="logo-div">
+               <img class="logo" src="themes/ilf/assets/logo/ILAF_Black_Spacer-1.png" alt="ILF Logo">
+           </div>
+          <div class="relics-container">
+          
+           {% for album in albumList.albums %}
+           <a href="{{ album.url }}" class="relics-link"> <img src="{{ album.latestPhoto.thumb }}" alt="relic images" data-name="{{ album.title }}" data-location="Ujjain, Madhya Pradesh" data-era="16th C.On." class="relics current"> </a>
+          {% endfor %}
+          </div>
+          <div class=" relic-info-container">
+              <p class=" relic-info-text relic-name">Orchha</p>
+              <p class=" relic-info-text relic-location">Ujjain, Madhya Pradesh</p>
+              <p class=" relic-info-text relic-era">16th C.On.</p>
+          </div>
+
+          <div class="nav-container">  
+            <a href="#" class="menu-open-btn"><img class="menu-icon" src="themes/ilf/assets/images/menu.png" alt=""></a>
+            <div class="menu-container">
+                <a href="#" class="menu-close-btn"><img src="themes/ilf/assets/images/cancel.png" alt=""></a>
+                <nav class="menu-nav">
+                    <a class="menu-item" href="#">Home</a>
+                    <a class="menu-item" href="#">Vision</a>
+                    <a class="menu-item" href="#">The Relics</a>
+                    <a class="menu-item" href="#">ILF Experts</a>
+                    <a class="menu-item" href="#">Workshops</a>
+                    <a class="menu-item" href="#">Videos</a>
+                    <a class="menu-item" href="#">Contact</a>
+                  </nav>
+                  
+                  
+            </div>
+            <a href="#" class="search-anchor"><img class="search-icon" src="themes/ilf/assets/images/search.svg" alt=""></a>
+        </div>
+        </div>
