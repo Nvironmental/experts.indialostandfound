@@ -1,0 +1,6 @@
+plugin:
+    name: 'mantiseye.reliccordinates::lang.plugin.name'
+    description: 'mantiseye.reliccordinates::lang.plugin.description'
+    author: 'Mantis Eye'
+    icon: oc-icon-location-arrow
+    homepage: 'https://mantiseye.co'
