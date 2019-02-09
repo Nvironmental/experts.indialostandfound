@@ -22,7 +22,6 @@ class Plugin extends PluginBase
                     'label'   => 'Vip Status',
                     'comment' => 'Assigns VIP status to the expert',
                     'type' => 'switch'
-                    
                 ]
             ]);
         });
