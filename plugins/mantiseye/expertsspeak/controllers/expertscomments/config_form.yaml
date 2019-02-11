@@ -1,0 +1,10 @@
+name: ExpertsComments
+form: $/mantiseye/expertsspeak/models/expertscomment/fields.yaml
+modelClass: MantisEye\ExpertsSpeak\Models\ExpertsComment
+defaultRedirect: mantiseye/expertsspeak/expertscomments
+create:
+    redirect: 'mantiseye/expertsspeak/expertscomments/update/:id'
+    redirectClose: mantiseye/expertsspeak/expertscomments
+update:
+    redirect: mantiseye/expertsspeak/expertscomments
+    redirectClose: mantiseye/expertsspeak/expertscomments

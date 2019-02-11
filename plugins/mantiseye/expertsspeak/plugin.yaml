@@ -1,0 +1,11 @@
+plugin:
+    name: 'mantiseye.expertsspeak::lang.plugin.name'
+    description: 'mantiseye.expertsspeak::lang.plugin.description'
+    author: 'Mantis Eye'
+    icon: oc-icon-comment-o
+    homepage: 'https://mantiseye.co'
+navigation:
+    main-menu-item:
+        label: 'mantiseye.expertsspeak::lang.plugin.name'
+        url: mantiseye/expertsspeak/expertscomments
+        icon: icon-life-ring

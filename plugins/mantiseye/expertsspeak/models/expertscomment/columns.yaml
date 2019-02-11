@@ -1,0 +1,11 @@
+columns:
+    comment:
+        label: Comments
+        type: text
+        searchable: true
+        sortable: true
+    is_approved:
+        label: 'Approval Status'
+        type: switch
+        searchable: true
+        sortable: true

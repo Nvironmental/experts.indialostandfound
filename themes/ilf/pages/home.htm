@@ -5,9 +5,9 @@ is_hidden = 0
 
 [albumList]
 albumPage = "home"
-thumbMode = "auto"
-thumbWidth = 640
-thumbHeight = 480
+thumbMode = "exact"
+thumbWidth = 0
+thumbHeight = 0
 albumsOnPage = 12
 ==
 <div class="container"> 
@@ -17,13 +17,13 @@ albumsOnPage = 12
           <div class="relics-container">
           
            {% for album in albumList.albums %}
-           <a href="{{ album.url }}" class="relics-link"> <img src="{{ album.latestPhoto.thumb }}" alt="relic images" data-name="{{ album.title }}" data-location="Ujjain, Madhya Pradesh" data-era="16th C.On." class="relics current"> </a>
+           <a href="{{ album.url }}" class="relics-link"> <img src="{{ album.latestPhoto.thumb }}" alt="relic images" data-name="{{ album.title }}" data-location="{{ album.location }}" data-era="{{ album.century }}" class="relics"> </a>
           {% endfor %}
           </div>
           <div class=" relic-info-container">
-              <p class=" relic-info-text relic-name">Orchha</p>
-              <p class=" relic-info-text relic-location">Ujjain, Madhya Pradesh</p>
-              <p class=" relic-info-text relic-era">16th C.On.</p>
+              <p class=" relic-info-text relic-name"></p>
+              <p class=" relic-info-text relic-location"></p>
+              <p class=" relic-info-text relic-era"></p>
           </div>
 
           <div class="nav-container">  

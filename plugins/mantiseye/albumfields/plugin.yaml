@@ -1,0 +1,6 @@
+plugin:
+    name: 'mantiseye.albumfields::lang.plugin.name'
+    description: 'mantiseye.albumfields::lang.plugin.description'
+    author: 'Mantis Eye'
+    icon: oc-icon-cogs
+    homepage: ''

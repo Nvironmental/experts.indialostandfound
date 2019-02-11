@@ -1,0 +1,21 @@
+fields:
+    comment:
+        label: 'Text area'
+        size: ''
+        span: full
+        type: textarea
+    is_approved:
+        label: 'Comment Approval Status'
+        span: auto
+        type: switch
+    commentImage:
+        label: Image
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '400'
+        imageHeight: '200'
+        type: fileupload
