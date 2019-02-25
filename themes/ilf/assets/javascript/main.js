@@ -1,4 +1,4 @@
-var relicsDiv = document.querySelector(".relics-container")	
+var relicsDiv = document.querySelector(".relics-container")	;
 var relicsImgs = document.querySelectorAll('.relics');
 var doesCurrentExist = document.querySelectorAll('img');
 var relicInfoContainer= document.querySelector('.relic-info-container');
@@ -34,13 +34,13 @@ var callback = function(entries, observer) {
                 relicEra.innerText = current.dataset.era;   
                 
         }
-    })
+    });
 };
 
 
 var options = {
     threshold: [0.25, 0.5, 0.75, 1.0]
-}
+};
 
 var observer = new IntersectionObserver(callback, options);
 
@@ -64,11 +64,11 @@ document.querySelectorAll('.relics').forEach((elem) => observer.observe(elem));
             document.querySelector(".search-label").classList.remove('up');
             document.querySelector("#q").value = "";
             document.querySelector(".go-search").style.display = "none";
-            document.querySelector(".close-search").style.display = "block"
+            document.querySelector(".close-search").style.display = "block";
             }
         else {
             document.querySelector(".search-label").classList.add('up');
-            document.querySelector(".close-search").style.display = "none"
+            document.querySelector(".close-search").style.display = "none";
             document.querySelector(".go-search").style.display = "block";
         }
 

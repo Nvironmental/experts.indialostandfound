@@ -2,6 +2,7 @@
 
 use System\Classes\PluginBase;
 use Graker\PhotoAlbums\Controllers\Albums as AlbumsController;
+use Graker\PhotoAlbums\Models\Album as AlbumModel;
 
 class Plugin extends PluginBase
 {
@@ -15,6 +16,10 @@ class Plugin extends PluginBase
 
     public function boot () {
         AlbumsController::extendFormFields(function($form,$model,$context){
+            if( !$model instanceof AlbumModel){ // check if this is not a album model, if true abort operation.
+                return;
+            }
+
             $form->addFields([
                 'location' => [
                     'label'   => 'Album Location',

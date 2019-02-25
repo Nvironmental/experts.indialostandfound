@@ -9,3 +9,18 @@ columns:
         type: switch
         searchable: true
         sortable: true
+    relic_name:
+        label: 'Relic Title'
+        type: text
+        searchable: true
+        sortable: true
+    user_email:
+        label: 'Expert Email'
+        type: text
+        searchable: true
+        sortable: true
+    user_name:
+        label: 'Expert Name'
+        type: text
+        searchable: true
+        sortable: true

@@ -29,10 +29,10 @@ class ExpertsComment extends Model
     public $rules = [
     ];
 
-    public $belongsTo = [
-        'user' => ['RainLab\User\Models\User'],
-        'photo_id' => ['Graker\PhotoAlbums\Models\Photo']
-    ];
+    // public $belongsTo = [
+    //     'user' => ['RainLab\User\Models\User'],
+    //     'photo_id' => ['Graker\PhotoAlbums\Models\Photo']
+    // ];
 
     public $attachOne = [
         'commentImage' => 'System\Models\File'

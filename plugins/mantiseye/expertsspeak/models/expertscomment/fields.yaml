@@ -9,13 +9,33 @@ fields:
         span: auto
         type: switch
     commentImage:
-        label: Image
-        span: full
+        label: 'Expert Uploaded Image'
         mode: image
+        imageWidth: '400'
+        imageHeight: '200'
         useCaption: true
         thumbOptions:
             mode: crop
             extension: auto
-        imageWidth: '400'
-        imageHeight: '200'
+        span: full
         type: fileupload
+    photo_id:
+        label: 'Relic ID'
+        span: auto
+        type: number
+    relic_name:
+        label: 'Relic Title'
+        span: auto
+        type: text
+    user_id:
+        label: 'Expert ID'
+        span: auto
+        type: number
+    user_name:
+        label: 'Expert Name'
+        span: auto
+        type: text
+    user_email:
+        label: 'Expert Email'
+        span: full
+        type: text

@@ -4,7 +4,7 @@ description = "New layout"
 <html>
     <head>
         <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>India Lost and found - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="OctoberCMS">
@@ -12,11 +12,16 @@ description = "New layout"
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/relics.css'|theme }}" rel="stylesheet">
         {% styles %}
+         <!-- Scripts -->
+        
     </head>
     <body>
-
-    
+    	<script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
+    	<script src="{{ 'assets/javascript/jquery.lazy.min.js'|theme }}"></script>
+		<script src="{{ 'assets/javascript/jquery.lazy.plugins.min.js'|theme }}"></script>
+    	<script src="{{ 'assets/javascript/underscore.js'|theme }}"></script>
 
         <!-- Content -->
         <div id="top-container">
@@ -26,8 +31,8 @@ description = "New layout"
  
 
         <!-- Scripts -->
-        <script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
-        <script src="{{ 'assets/javascript/main.js'|theme }}"></script>
+        
+
         {% framework extras %}
         {% scripts %}
 

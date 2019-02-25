@@ -1,0 +1,43 @@
+[session]
+security = "all"
+redirect = "experts"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>India Lost and found - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link href="{{ 'assets/css/experts.css'|theme }}" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        {% styles %}
+         <!-- Scripts -->
+        
+    </head>
+    <body>
+    	<script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
+    	<script src="{{ 'assets/javascript/jquery.lazy.min.js'|theme }}"></script>
+		<script src="{{ 'assets/javascript/jquery.lazy.plugins.min.js'|theme }}"></script>
+    	<script src="{{ 'assets/javascript/underscore.js'|theme }}"></script>
+
+        <!-- Content -->
+        <div id="top-container">
+            {% page %}
+        </div>
+
+ 
+
+        <!-- Scripts -->
+        
+
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>

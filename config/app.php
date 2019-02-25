@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://ilfexperts.test',
+    'url' => env('APP_URL', 'http://ilfexperts.test'),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'key' => 'rMxOYI7rZGGmGFdUA8z0kiV8aSsmlDY5',
+    'key' => env('APP_KEY', ''),
 
     'cipher' => 'AES-256-CBC',
 

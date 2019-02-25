@@ -9,15 +9,18 @@ thumbMode = "exact"
 thumbWidth = 0
 thumbHeight = 0
 albumsOnPage = 12
+
+[siteSearchInclude]
 ==
-<div class="container"> 
+{% component 'siteSearchInclude' %}
+<div class="main-container"> 
            <div class="logo-div">
                <img class="logo" src="themes/ilf/assets/logo/ILAF_Black_Spacer-1.png" alt="ILF Logo">
            </div>
           <div class="relics-container">
           
-           {% for album in albumList.albums %}
-           <a href="{{ album.url }}" class="relics-link"> <img src="{{ album.latestPhoto.thumb }}" alt="relic images" data-name="{{ album.title }}" data-location="{{ album.location }}" data-era="{{ album.century }}" class="relics"> </a>
+           {% for album in albumList.albums|sort %}
+           <a href="{{ '/relics/' ~ album.slug }}" class="relics-link"> <img src="{{ album.latestPhoto.thumb }}" alt="relic images" data-name="{{ album.title }}" data-location="{{ album.location }}" data-era="{{ album.century }}" class="relics"> </a>
           {% endfor %}
           </div>
           <div class=" relic-info-container">
@@ -27,9 +30,8 @@ albumsOnPage = 12
           </div>
 
           <div class="nav-container">  
-            <a href="#" class="menu-open-btn"><img class="menu-icon" src="themes/ilf/assets/images/menu.png" alt=""></a>
+            <a href="#" class="menu-open-btn"><div class="menu-icon"></div></a>
             <div class="menu-container">
-                <a href="#" class="menu-close-btn"><img src="themes/ilf/assets/images/cancel.png" alt=""></a>
                 <nav class="menu-nav">
                     <a class="menu-item" href="#">Home</a>
                     <a class="menu-item" href="#">Vision</a>
@@ -45,3 +47,48 @@ albumsOnPage = 12
             <a href="#" class="search-anchor"><img class="search-icon" src="themes/ilf/assets/images/search.svg" alt=""></a>
         </div>
         </div>
+        
+        <div class="search-display">
+            <label class="search-label" for="search"><strong>Search</strong><i> by city, state, relic, expert, date, dynasty, comment, keywords…</i></label>
+            <input class="search-input"  type="text" name="search" id="q"><span class="close-search">X</span><span class="go-search">&rarr;</span>
+            <div class="search-result-container">
+               <div class="single-result-container">
+                  <p class="search-result-relic-name">Raj Mahal and Ruins</p>
+                  <p class="search-result-relic-location"><strong>Orchha</strong></p>
+                  <img class="search-result-items" src="assets/imgs/nanital/A3.jpg" alt="search-result" srcset="">
+               </div>
+               <div class="single-result-container">
+                  <p class="search-result-relic-name">Maha Complex</p>
+                  <p class="search-result-relic-location"><strong>Orchha</strong></p>
+                  <img class="search-result-items" src="assets/imgs/nanital/C1.jpg" alt="search-result" srcset="">
+               </div>
+               <div class="single-result-container">
+                  <p class="search-result-relic-name">Raj Mahal Complex</p>
+                  <p class="search-result-relic-location"><strong>Orchha</strong></p>
+                  <img class="search-result-items" src="assets/imgs/nanital/C2.jpg" alt="search-result" srcset="">
+               </div>
+               <div class="single-result-container">
+                  <p class="search-result-relic-name">Cenotaphs</p>
+                  <p class="search-result-relic-location"><strong>Orchha</strong></p>
+                  <img class="search-result-items" src="assets/imgs/nanital/C3.jpg" alt="search-result" srcset="">
+               </div>
+               <div class="single-result-container">
+                  <p class="search-result-relic-name">Raj Mahal Ruins</p>
+                  <p class="search-result-relic-location"><strong>Orchha</strong></p>
+                  <img class="search-result-items" src="assets/imgs/nanital/C4.jpg" alt="search-result" srcset="">
+               </div>
+            </div>
+            <label class="map-label"  for="search">OR look for relics on the map below</label>
+            <img class="map" src="assets/imgs/map.png" alt="map">
+         </div>
+         
+          {% put scripts %}
+    			<script type="text/javascript" src="/themes/ilf/assets/javascript/main.js"></script>
+		{% endput %}
+         
+         
+          <script>
+             $(function() {
+                 $('.relics').Lazy();
+            });
+         </script>

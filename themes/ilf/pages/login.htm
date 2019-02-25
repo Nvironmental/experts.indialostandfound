@@ -1,14 +1,9 @@
 title = "login"
 url = "/login"
+layout = "sessions"
 is_hidden = 0
-
-[account]
-redirect = "home"
-paramCode = "code"
-forceSecure = 0
 
 [session]
 security = "all"
-redirect = "home"
 ==
-{% component 'account' %}
+<a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>

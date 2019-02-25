@@ -1,0 +1,344 @@
+title = "experts"
+url = "/experts"
+layout = "experts"
+is_hidden = 0
+
+[photoAlbum]
+photoPage = "experts-relics"
+thumbMode = "auto"
+thumbWidth = 640
+thumbHeight = 480
+photosOnPage = 20
+==
+<!-- <div id='potrait'>
+      <div id='potrait-inner-div'>
+          <img id='potrait-img' src='http://www.indialostandfound.com/wp-content/uploads/2018/07/ILAF_Black_Spacer_Wide.png' style='width:250px;'>
+            <p id='potrait-text'> Enter your Email ID to login</p>
+            <form id='login-form' method='POST' action='".login($conn)."' >
+                <div id='login-name-div' class='row pl-5 pr-5'>
+                <input type='email' name='lgemail' id='lg-email' data-validation='email' data-validation-error-msg='Please enter a valid email address'>
+                
+            </div> <br/>
+            <div class='alert alert-danger d-none ml-5 mr-5' role='alert'>
+            <strong>Oh snap!</strong> This email id isn't registered with us as an expert. Please write to <strong><a href='mailto:indiawithamit@gmail.com'>indiawithamit@gmail.com<a></strong>‬ !
+            </div>
+            <div id='login-name-div' class='container-fluid pl-5 pr-5'>
+                    <button id='login' type='submit' class='login btn btn-dark' name='login'>Login</button>
+            </div>
+           
+                </form>
+        </div>
+    </div> -->
+
+    <!--Login Form-->
+
+
+
+{% set album = photoAlbum.album %}
+
+{{ album }}
+
+
+<h1>{{ album.title }}</h1>
+
+{% if album.description %}
+    <div class="album-description row">
+        <div class="col-xs-12">
+            {{ album.description|raw }}
+        </div>
+    </div>
+{% endif %}
+
+<div class="album-photos row">
+    {% for photo in album.photos %}
+        <div class="photo col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="{{ photo.url }}"><img
+                    data-src="{{ photo.thumb }}"
+                    src="{{ photo.thumb }}"
+                    alt="{{ photo.title }}"
+                    title="{{ photo.title }}"
+                    style="max-width: 100%" />
+            </a>
+            <a href="{{ photo.url }}"><strong>{{ photo.title }}</strong></a>
+        </div>
+    {% else %}
+        <div class="col-xs-12 no-data">Album doesn't have any photos yet</div>
+    {% endfor %}
+</div>
+
+{% if photoAlbum.lastPage > 1 %}
+<ul class="pagination">
+    {% if photoAlbum.currentPage > 1 %}
+    <li><a href="{{ this.page.baseFileName|page }}?page={{ photoAlbum.currentPage-1 }}">&larr; Prev</a></li>
+    {% endif %}
+
+    {% for page in 1..photoAlbum.lastPage %}
+    <li class="{{ photoAlbum.currentPage == page ? 'active' : null }}">
+        <a href="{{ this.page.baseFileName|page }}?page={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if photoAlbum.lastPage > photoAlbum.currentPage %}
+    <li><a href="{{ this.page.baseFileName|page }}?page={{ photoAlbum.currentPage+1 }}">Next &rarr;</a></li>
+    {% endif %}
+</ul>
+{% endif %}
+
+
+
+{% set album = photoAlbum2.album %}
+
+<h1>{{ album.title }}</h1>
+
+{% if album.description %}
+    <div class="album-description row">
+        <div class="col-xs-12">
+            {{ album.description|raw }}
+        </div>
+    </div>
+{% endif %}
+
+<div class="album-photos row">
+    {% for photo in album.photos %}
+        <div class="photo col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="{{ photo.url }}"><img
+                    data-src="{{ photo.thumb }}"
+                    src="{{ photo.thumb }}"
+                    alt="{{ photo.title }}"
+                    title="{{ photo.title }}"
+                    style="max-width: 100%" />
+            </a>
+            <a href="{{ photo.url }}"><strong>{{ photo.title }}</strong></a>
+        </div>
+    {% else %}
+        <div class="col-xs-12 no-data">Album doesn't have any photos yet</div>
+    {% endfor %}
+</div>
+
+{% if photoAlbum2.lastPage > 1 %}
+<ul class="pagination">
+    {% if photoAlbum2.currentPage > 1 %}
+    <li><a href="{{ this.page.baseFileName|page }}?page={{ photoAlbum2.currentPage-1 }}">&larr; Prev</a></li>
+    {% endif %}
+
+    {% for page in 1..photoAlbum2.lastPage %}
+    <li class="{{ photoAlbum2.currentPage == page ? 'active' : null }}">
+        <a href="{{ this.page.baseFileName|page }}?page={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if photoAlbum2.lastPage > photoAlbum2.currentPage %}
+    <li><a href="{{ this.page.baseFileName|page }}?page={{ photoAlbum2.currentPage+1 }}">Next &rarr;</a></li>
+    {% endif %}
+</ul>
+{% endif %}
+
+
+
+								<!-- Scroll Top Button -->
+							<div class='scrolltop'>
+                                <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+                            </div>
+								<!-- Scroll Top Button -->
+
+    <div class="container-fluid shadow-sm pl-4 pt-2 pb-2 pr-4 ">
+        <div class="row">
+            <div class="col-4">
+                 <a href="/"><img src="assets/ILAF_Black_Spacer_Wide.png" alt="" width="80px"></a>
+            </div>
+            <div class="vdivider">
+               </div>
+            <div class="col-7 title text-center">
+                <span class="title-text experts">Experts</span><span class="title-text dashboard">Dashboard</span>
+               </div>
+        </div>
+       
+    </div>
+
+    <div class="container-fluid pl-4 pt-4 pb-4 pr-4 body">
+        <p class="infotext">
+                Click on the Relic to view/post comment
+        </p>
+
+        <div class="row">
+            <div class="col mb-4">
+                <div class="location-name pb-2 pt-2 pl-1 pr-1">Orchha <span class="vmi vmi-orchha btn btn-info"> View/Post a Comment</span> </div>
+                <div class="relic-img-div">
+                    
+                        <img src="assets/relics/Orchha/A1.jpg" alt="" id="orchha" class="rounded">
+                        <div id="orchha-imgs" class="imgs"> 
+                            
+                            <img data-src="assets/relics/Orchha/A2.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);">
+                            <img data-src="assets/relics/Orchha/A3.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A4.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A5.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A6.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            
+                        </div>
+                        
+
+                    
+                </div>
+            </div>   
+            </div>
+
+        <div class="row">
+            <div class="col mb-4">
+                <div class="location-name pb-2 pt-2 pl-1 pr-1">Orchha <span class="vmi vmi-orchha btn btn-info"> View/Post a Comment</span> </div>
+                <div class="relic-img-div">
+                    
+                        <img src="assets/relics/Orchha/A1.jpg" alt="" id="orchha" class="rounded">
+                        <div id="orchha-imgs" class="imgs"> 
+                            
+                            <img data-src="assets/relics/Orchha/A2.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);">
+                            <img data-src="assets/relics/Orchha/A3.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A4.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A5.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            <img data-src="assets/relics/Orchha/A6.jpg" alt="" class="rounded mt-2 orchha-imgs" onclick="filename(this);" >
+                            
+                        </div>
+                        
+
+                    
+                </div>
+            </div>   
+            </div>
+            
+            
+            <div class="row">
+            <div class="col mb-4">
+                    <div class="location-name pb-2 pt-2 pl-1 pr-1">Mandu <span class="vmi vmi-mandu btn btn-info"> View/Post a Comment</span> </div>
+                    <div class="relic-img-div">
+                        
+                            <img src="assets/relics/Mandu/B1.jpg" alt="" id="mandu" class="rounded" >
+                            <div id="mandu-imgs" class="imgs">
+                                <img data-src="assets/relics/Mandu/B2.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Mandu/B3.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Mandu/B4.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Mandu/B5.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Mandu/B6.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Mandu/B7.jpg" alt="" class="rounded mt-2 mandu-imgs" onclick="filename(this);">
+                            </div>
+                        
+                    </div>
+                </div> 
+                </div>
+                <div class="row">
+            <div class="col mb-4">
+                    <div class="location-name pb-2 pt-2 pl-1 pr-1">Nainital <span class="vmi vmi-nainital btn btn-info"> View/Post a Comment</span> </div>
+                    <div class="relic-img-div">
+                        
+                            <img src="assets/relics/Nainital/C1.jpg" alt="" id="nainital" class="rounded" >
+                            <div id="nainital-imgs" class="imgs">
+                                <img data-src="assets/relics/Nainital/C2.jpg" alt="" class="rounded mt-2 nainital-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Nainital/C3.jpg" alt="" class="rounded mt-2 nainital-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Nainital/C4.jpg" alt="" class="rounded mt-2 nainital-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Nainital/C5.jpg" alt="" class="rounded mt-2 nainital-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Nainital/C6.jpg" alt="" class="rounded mt-2 nainital-imgs" onclick="filename(this);">
+                                
+                            </div>
+                        
+                    </div>
+                </div>    
+                </div>
+                <div class="row">
+            <div class="col mb-4">
+                    <div class="location-name pb-2 pt-2 pl-1 pr-1">Bikaner <span class="vmi vmi-bikaner btn btn-info"> View/Post a Comment </span> </div>
+                    <div class="relic-img-div">
+                        
+                            <img src="assets/relics/Bikaner/D1.jpg" alt="" id="bikaner"  class="rounded" >
+                            <div id="bikaner-imgs" class="imgs">
+                                <img data-src="assets/relics/Bikaner/D2.jpg" alt="" class="rounded mt-2 bikaner-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Bikaner/D3.jpg" alt="" class="rounded mt-2 bikaner-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Bikaner/D4.jpg" alt="" class="rounded mt-2 bikaner-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Bikaner/D5.jpg" alt="" class="rounded mt-2 bikaner-imgs" onclick="filename(this);">
+                               
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+            <div class="col mb-4">
+                    <div class="location-name pb-2 pt-2 pl-1 pr-1">Patiala <span class="vmi vmi-patiala btn btn-info"> View/Post a Comment</span> </div>
+                    <div class="relic-img-div">
+                        
+                            <img src="assets/relics/Patiala/E1.jpg" alt="" id="patiala" class="rounded" >
+                            <div id="patiala-imgs" class="imgs">
+                                <img data-src="assets/relics/Patiala/E2.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Patiala/E3.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Patiala/E4.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Patiala/E5.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Patiala/E6.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/Patiala/E7.jpg" alt="" class="rounded mt-2 patiala-imgs" onclick="filename(this);">
+                                
+                            </div>
+                        
+                    </div>
+                </div> 
+                </div>
+                <div class="row">
+            <div class="col mb-4">
+                    <div class="location-name pb-2 pt-2 pl-1 pr-1">Fatehpur Sikri <span class="vmi vmi-fatehpur btn btn-info"> View/Post a Comment</span> </div>
+                    <div class="relic-img-div">
+                        
+                            <img src="assets/relics/FatehpurSikri/F1.jpg" alt="" id="fatehpur" class="rounded"  >
+                            <div id="fatehpur-imgs" class="imgs">
+                                <img data-src="assets/relics/FatehpurSikri/F2.jpg" alt="" class="rounded mt-2 fatehpur-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/FatehpurSikri/F3.jpg" alt="" class="rounded mt-2 fatehpur-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/FatehpurSikri/F4.jpg" alt="" class="rounded mt-2 fatehpur-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/FatehpurSikri/F5.jpg" alt="" class="rounded mt-2 fatehpur-imgs" onclick="filename(this);">
+                                <img data-src="assets/relics/FatehpurSikri/F6.jpg" alt="" class="rounded mt-2 fatehpur-imgs" onclick="filename(this);">
+                                
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+                </div>
+        
+
+    </div>
+
+
+
+{% put scripts %}     
+    
+    <script>
+        if(window.location.search == ""){
+        console.log("")
+        }
+        else{
+            
+                setTimeout(function(){
+                    if(getParams(window.location.href).img.split("/")[0] == "Orchha" ){
+            jQuery(".vmi-orchha").click();}
+            if(getParams(window.location.href).img.split("/")[0] == "Mandu" ){
+            jQuery(".vmi-mandu").click();}
+            if(getParams(window.location.href).img.split("/")[0] == "Nainital" ){
+            jQuery(".vmi-nainital").click();}
+            if(getParams(window.location.href).img.split("/")[0] == "Bikaner" ){
+            jQuery(".vmi-bikaner").click();}
+            if(getParams(window.location.href).img.split("/")[0] == "Patiala" ){
+            jQuery(".vmi-patiala").click();}
+            if(getParams(window.location.href).img.split("/")[0] == "FatehpurSikri" ){
+            jQuery(".vmi-fatehpur").click();}
+                },500)
+          
+        }
+
+        
+    </script>
+    	<script>
+										$(window).scroll(function() {
+                                                if ($(this).scrollTop() > 50 ) {
+                                                    $('.scrolltop:hidden').stop(true, true).fadeIn();
+                                                } else {
+                                                    $('.scrolltop').stop(true, true).fadeOut();
+                                                }
+                                            });
+                                            $(function(){$(".scroll").click(function(){$("html,body").animate({scrollTop:$(".container-fluid").offset().top},"1000");return false})})
+                                        										
+									</script>
+{% endput %}

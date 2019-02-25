@@ -1,0 +1,22 @@
+title = "search-input"
+url = "/search-input"
+layout = "default"
+is_hidden = 0
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 10
+showProviderBadge = 1
+searchPage = "search-input.htm"
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
+==
+{% component 'searchInput' %}
+
+
+
+{% component 'searchResults' %}

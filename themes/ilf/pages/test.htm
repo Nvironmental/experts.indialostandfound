@@ -2,12 +2,12 @@ title = "test"
 url = "/test"
 layout = "default"
 is_hidden = 0
-
-[albumList]
-albumPage = "test"
-thumbMode = "auto"
-thumbWidth = 640
-thumbHeight = 480
-albumsOnPage = 12
 ==
-{% component 'albumList' %}
+function onRedirectMe()
+{
+    return Redirect::to('https://experts.indialostandfound.test/relics/orchha');
+}
+==
+<button data-request="onRedirectMe">CTA</button>
+
+<div id="myDiv"></div>
